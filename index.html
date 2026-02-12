@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For My Anna 💙</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #f0f8ff, #dbeeff);
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* Password Screen */
+#passwordScreen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #e3f2fd, #bbdefb);
+}
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Main Content */
+#mainContent {
+    display: none;
+    padding: 20px;
+}
+
+h1 {
+    color: #0d47a1;
+    margin-top: 30px;
+}
+
+.memory {
+    background: white;
+    margin: 25px auto;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.memory img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+.footer {
+    margin: 40px 0;
+    color: #0d47a1;
+}
+
+/* Falling Hearts */
+.heart {
+    position: fixed;
+    top: -10px;
+    color: #64b5f6;
+    font-size: 18px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Password Protection -->
+<div id="passwordScreen">
+    <h2>Only for My Anna 💙</h2>
+    <p>Enter the secret word</p>
+    <input type="password" id="passwordInput" placeholder="Secret word">
+    <button onclick="checkPassword()">Enter</button>
+    <p id="error" style="color:red;"></p>
+</div>
+
+<!-- Main Content -->
+<div id="mainContent">
+
+<h1>Open this when you miss me 💙</h1>
+
+<p id="typingText" style="max-width:600px; margin:20px auto; font-size:18px;"></p>
+
+<button onclick="playMusic()">Play Our Song 🎵</button>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="memory">
+    <h3>Childhood 💭</h3>
+    <p>We fought like enemies but loved like best friends.</p>
+    <img src="photo1.jpg">
+</div>
+
+<div class="memory">
+    <h3>My Safe Place 🛡️</h3>
+    <p>You were always my silent protector.</p>
+    <img src="photo2.jpg">
+</div>
+
+<div class="memory">
+    <h3>Forever 💙</h3>
+    <p>No distance can reduce what you mean to me.</p>
+    <img src="photo3.jpg">
+</div>
+
+<div class="footer">
+    Always your little sister — Libi 💙
+</div>
+
+</div>
+
+<script>
+// Password
+function checkPassword() {
+    const password = document.getElementById("passwordInput").value;
+    if (password === "anna123") {   // Change this password
+        document.getElementById("passwordScreen").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        startTyping();
+    } else {
+        document.getElementById("error").innerText = "Wrong password 💔";
+    }
+}
+
+// Typing Animation
+const message = "Even if we don’t talk every day, you are always in my heart. I miss your voice, your laughter, and the way you annoy me. Come back soon, Anna.";
+let i = 0;
+
+function startTyping() {
+    function type() {
+        if (i < message.length) {
+            document.getElementById("typingText").innerHTML += message.charAt(i);
+            i++;
+            setTimeout(type, 50);
+        }
+    }
+    type();
+}
+
+// Music
+function playMusic() {
+    document.getElementById("bgMusic").play();
+}
+
+// Falling Hearts
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerText = "💙";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>
