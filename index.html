@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For My Anna 💙</title>
+    <title>For My Anna 🤍</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -94,7 +94,7 @@ h1 {
 
 <!-- Password Protection -->
 <div id="passwordScreen">
-    <h2>Only for My Anna 💙</h2>
+    <h2>Only for My Anna 🤍</h2>
     <p>Enter the secret word</p>
     <input type="password" id="passwordInput" placeholder="Secret word">
     <button onclick="checkPassword()">Enter</button>
@@ -104,7 +104,7 @@ h1 {
 <!-- Main Content -->
 <div id="mainContent">
 
-<h1>Open this when you miss me 💙</h1>
+<h1>Open this when you miss me 🤍</h1>
 
 <p id="typingText" style="max-width:600px; margin:20px auto; font-size:18px;"></p>
 
@@ -127,13 +127,13 @@ h1 {
 </div>
 
 <div class="memory">
-    <h3>Forever 💙</h3>
+    <h3>Forever 🤍</h3>
     <p>No distance can reduce what you mean to me.</p>
     <img src="photo3.jpg">
 </div>
 
 <div class="footer">
-    Always your little sister — Libi 💙
+    Always your little sister — Libi 🤍
 </div>
 
 </div>
@@ -142,7 +142,7 @@ h1 {
 // Password
 function checkPassword() {
     const password = document.getElementById("passwordInput").value;
-    if (password === "anna123") {   // Change this password
+    if (password === "2104") {   // Change this password
         document.getElementById("passwordScreen").style.display = "none";
         document.getElementById("mainContent").style.display = "block";
         startTyping();
@@ -152,7 +152,7 @@ function checkPassword() {
 }
 
 // Typing Animation
-const message = "Even if we don’t talk every day, you are always in my heart. I miss your voice, your laughter, and the way you annoy me. Come back soon, Anna.";
+const message = "Even if we don’t talk every day, you are always in my heart. I miss your presence , your laughter, and the way you annoy me. Come back soon, Sash🤍.";
 let i = 0;
 
 function startTyping() {
@@ -175,7 +175,7 @@ function playMusic() {
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
-    heart.innerText = "💙";
+    heart.innerText = "🤍";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = Math.random() * 3 + 3 + "s";
     document.body.appendChild(heart);
